@@ -4,11 +4,10 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install --only=production
+RUN npm ci
 
-COPY . ./
+COPY . /app
 
-EXPOSE 3000
+RUN npm run build
 
-CMD ["npm", "run", "start"]
-
+CMD npm run migrate && npm start

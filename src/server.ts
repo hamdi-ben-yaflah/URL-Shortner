@@ -1,4 +1,5 @@
 import express, { Request, Response } from "express";
+import { sequelize } from "./sequelize";
 
 const app = express();
 app.use(express.json());

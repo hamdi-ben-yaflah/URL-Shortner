@@ -6,7 +6,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: shortner_db
+      POSTGRES_DB: shortener_db
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     ports:
@@ -21,8 +21,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: >
-      sh -c "npm install && npm run start"
     volumes:
       - .:/app
     ports:
